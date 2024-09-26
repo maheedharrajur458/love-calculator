@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Document</title>
+    <style>
+        body{
+            font-family:'Times New Roman', Times, serif;
+            text-align:center;
+            margin-top:50px;
+            background-color:deeppink;
+        }
+
+        #LoveCalculator{
+            background-color: white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 4px 8px black;
+            max-width:400px;
+            margin:0 auto;
+         }
+
+        input{
+            padding:10px;
+            margin:10px;
+            width:80%;
+            border-radius:5px;
+            border: 1px solid #ff0000;
+        }
+        button{
+            padding:10px 20px;
+            background-color:rebeccapurple;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="LoveCalculator">
+        <h1>Love Calculator</h1>
+        <p>Enter your names to calculate </p> 
+        <input type="text" id="YourName" placeholder="YourName" >
+        <input type="text" id="YourPartnerName" placeholder="YourPartnerName" >
+        <button onclick="calculatelove()">calculatelove</button>
+        <div id="result"></div>
+        </div>
+    <script>
+        function calculatelove() {
+            const YourName = document.getElementById("YourName").value;
+            const YourPartnerName = document.getElementById("YourPartnerName").value;
+            if (YourName === '' || YourPartnerName === '') {
+                document.getElementById('result').textContent = 'Please enter both names';
+            return;
+
+        }
+        const lovepercentage = Math.floor(Math.random()*51)+50;
+        document.getElementById('result').textContent = `${YourName} and ${YourPartnerName} have a ${lovepercentage}% love compatibility`;
+    }
+    </script>
+
+
+   
+
+</body>
+</html>
